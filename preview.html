@@ -10,18 +10,42 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      overflow: hidden; /* Ensure no scrollbars appear */
+      margin: 0;
+      position: relative;
     }
+    
     @keyframes spin {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
-    img {
-      width: 300px;
+
+    .spinning-image {
+      position: absolute;
+      width: 100px; /* You can adjust the size */
       animation: spin 4s linear infinite;
     }
+
+    /* Randomly position the images */
+    .image-1 { top: 10%; left: 20%; }
+    .image-2 { top: 30%; left: 60%; }
+    .image-3 { top: 50%; left: 40%; }
+    .image-4 { top: 70%; left: 80%; }
+    .image-5 { top: 80%; left: 10%; }
+    .image-6 { top: 15%; left: 80%; }
+    .image-7 { top: 40%; left: 10%; }
+    .image-8 { top: 60%; left: 30%; }
+
   </style>
 </head>
 <body>
-  <img src="preview.png" alt="Spinning Preview">
+  <img src="preview.png" alt="Spinning Preview" class="spinning-image image-1">
+  <img src="preview.png" alt="Spinning Preview" class="spinning-image image-2">
+  <img src="preview.png" alt="Spinning Preview" class="spinning-image image-3">
+  <img src="preview.png" alt="Spinning Preview" class="spinning-image image-4">
+  <img src="preview.png" alt="Spinning Preview" class="spinning-image image-5">
+  <img src="preview.png" alt="Spinning Preview" class="spinning-image image-6">
+  <img src="preview.png" alt="Spinning Preview" class="spinning-image image-7">
+  <img src="preview.png" alt="Spinning Preview" class="spinning-image image-8">
 </body>
 </html>
