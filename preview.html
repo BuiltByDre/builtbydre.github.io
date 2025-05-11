@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Preview</title>
+  <style>
+    body {
+      background-color: #0d1117;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    img {
+      width: 300px;
+      animation: spin 4s linear infinite;
+    }
+  </style>
+</head>
+<body>
+  <img src="preview.png" alt="Spinning Preview">
+</body>
+</html>
