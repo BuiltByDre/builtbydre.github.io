@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Certifications | BuiltByDre</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown-dark.min.css">
+  <style>
+    body {
+      background-color: #0d1117;
+      color: #c9d1d9;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .cert-section {
+      margin-bottom: 3rem;
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+
+    .cert-item {
+      background-color: #161b22;
+      border: 1px solid #30363d;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      animation: float 4s ease-in-out infinite;
+      transition: transform 0.2s ease;
+    }
+
+    .cert-item:hover {
+      animation-play-state: paused;
+      transform: translateY(0); /* Cancel float offset on hover */
+    }
+
+    .cert-item img {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 1rem;
+    }
+
+    .cert-item a {
+      color: #58a6ff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .cert-item a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 2rem;
+      background-color: #1f6feb;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-button:hover {
+      background-color: #1158c7;
+    }
+  </style>
+</head>
+<body class="markdown-body">
+  <h1>📜 My Certifications</h1>
+
+  <!-- 🟦 Foundational Level -->
+  <div class="cert-section">
+    <h2>🔹 Foundational Level</h2>
+    <div class="cert-grid">
+      <div class="cert-item">
+        <img src="html-cert.png" alt="HTML Badge">
+        <a href="https://example.com/verify/html" target="_blank">HTML Certification</a>
+      </div>
+      <div class="cert-item">
+        <img src="css-cert.png" alt="CSS Badge">
+        <a href="https://example.com/verify/css" target="_blank">CSS Certification</a>
+      </div>
+      <!-- Add more foundational badges -->
+    </div>
+  </div>
+
+  <!-- 🟩 Associate Level -->
+  <div class="cert-section">
+    <h2>🟢 Associate Level</h2>
+    <div class="cert-grid">
+      <div class="cert-item">
+        <img src="aws-cert.png" alt="AWS Badge">
+        <a href="https://example.com/verify/aws" target="_blank">AWS Certified Developer</a>
+      </div>
+      <div class="cert-item">
+        <img src="js-cert.png" alt="JavaScript Badge">
+        <a href="https://example.com/verify/js" target="_blank">JavaScript Certification</a>
+      </div>
+      <!-- Add more associate badges -->
+    </div>
+  </div>
+
+  <div style="text-align:center;">
+    <a class="back-button" href="index.html">← Back to Home</a>
+  </div>
+</body>
+</html>
