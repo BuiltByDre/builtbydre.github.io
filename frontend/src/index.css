@@ -1,0 +1,412 @@
+/* -----------------------------------------------------------------------
+   Design tokens — dark GitHub-style palette
+   ----------------------------------------------------------------------- */
+:root {
+  --bg-primary: #0d1117;
+  --bg-card: rgba(22, 27, 34, 0.95);
+  --bg-input: #161b22;
+  --border: #30363d;
+  --text-primary: #c9d1d9;
+  --text-heading: #ffffff;
+  --text-muted: #8b949e;
+  --accent: #1f6feb;
+  --accent-hover: #1158c7;
+  --success: #3fb950;
+  --error: #f85149;
+  --radius: 8px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+/* -----------------------------------------------------------------------
+   Reset & base
+   ----------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--text-heading);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* -----------------------------------------------------------------------
+   Layout
+   ----------------------------------------------------------------------- */
+.app-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+/* -----------------------------------------------------------------------
+   Header
+   ----------------------------------------------------------------------- */
+.app-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.app-header .tagline {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* -----------------------------------------------------------------------
+   Card
+   ----------------------------------------------------------------------- */
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.card h2 {
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* -----------------------------------------------------------------------
+   Form elements
+   ----------------------------------------------------------------------- */
+label {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+
+textarea,
+input[type="text"] {
+  width: 100%;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-family: var(--font);
+  font-size: 0.9rem;
+  padding: 0.6rem 0.75rem;
+  resize: vertical;
+  transition: border-color 0.15s ease;
+}
+
+textarea:focus,
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* -----------------------------------------------------------------------
+   File drop zone
+   ----------------------------------------------------------------------- */
+.drop-zone {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  background-color: var(--bg-input);
+  position: relative;
+}
+
+.drop-zone:hover,
+.drop-zone.drag-over {
+  border-color: var(--accent);
+  background-color: rgba(31, 111, 235, 0.05);
+}
+
+.drop-zone input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.drop-zone .drop-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.drop-zone .drop-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.drop-zone .drop-filename {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--success);
+  font-weight: 500;
+}
+
+/* -----------------------------------------------------------------------
+   Buttons
+   ----------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.25rem;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, opacity 0.15s ease;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: #ffffff;
+  width: 100%;
+  justify-content: center;
+  padding: 0.8rem;
+  font-size: 1rem;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--accent-hover);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: var(--bg-input);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background-color: var(--border);
+}
+
+.btn-sm {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+}
+
+/* -----------------------------------------------------------------------
+   Error / status banners
+   ----------------------------------------------------------------------- */
+.banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.banner-error {
+  background-color: rgba(248, 81, 73, 0.12);
+  border: 1px solid rgba(248, 81, 73, 0.4);
+  color: #ffa198;
+}
+
+.banner-success {
+  background-color: rgba(63, 185, 80, 0.12);
+  border: 1px solid rgba(63, 185, 80, 0.4);
+  color: #56d364;
+}
+
+/* -----------------------------------------------------------------------
+   Loading spinner
+   ----------------------------------------------------------------------- */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* -----------------------------------------------------------------------
+   Results section
+   ----------------------------------------------------------------------- */
+.results-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.result-block label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.result-block textarea {
+  min-height: 260px;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+.result-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* -----------------------------------------------------------------------
+   Keywords & improvements
+   ----------------------------------------------------------------------- */
+.keywords-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+}
+
+.keyword-tag {
+  background-color: rgba(31, 111, 235, 0.15);
+  border: 1px solid rgba(31, 111, 235, 0.35);
+  color: #79c0ff;
+  border-radius: 2rem;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.78rem;
+}
+
+.improvements-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.improvements-list li {
+  font-size: 0.875rem;
+  padding-left: 1.25rem;
+  position: relative;
+  color: var(--text-primary);
+}
+
+.improvements-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--success);
+  font-weight: bold;
+}
+
+/* -----------------------------------------------------------------------
+   Footer
+   ----------------------------------------------------------------------- */
+.app-footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* -----------------------------------------------------------------------
+   Print stylesheet — only show results when printing to PDF
+   ----------------------------------------------------------------------- */
+@media print {
+  .upload-form-section,
+  .app-header,
+  .app-footer,
+  .result-actions,
+  .btn {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
+
+  .card {
+    border: 1px solid #cccccc;
+    background: #ffffff;
+    page-break-inside: avoid;
+  }
+
+  .result-block textarea {
+    border: none;
+    background: transparent;
+    color: #000000;
+    height: auto;
+    overflow: visible;
+    resize: none;
+  }
+
+  h2,
+  h3 {
+    color: #000000;
+  }
+}
+
+/* -----------------------------------------------------------------------
+   Responsive
+   ----------------------------------------------------------------------- */
+@media (max-width: 600px) {
+  .app-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+}
