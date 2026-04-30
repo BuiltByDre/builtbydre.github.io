@@ -40,6 +40,11 @@
       background-color: #1158c7;
     }
 
+    @keyframes logoPulse {
+      0%, 100% { opacity: 0.04; }
+      50%       { opacity: 0.09; }
+    }
+
     /* Watermark-style background logo */
     .watermark {
   position: absolute;
@@ -49,8 +54,10 @@
   opacity: 0.05;
   z-index: 0;
   max-width: 80%;
-  filter: brightness(0.8); /* Add this line */
+  filter: brightness(0.8);
+  animation: logoPulse 6s ease-in-out infinite;
 }
+
     .content {
       position: relative;
       z-index: 1;
@@ -136,6 +143,7 @@
   max-width: 70%;
   opacity: 0.05;
   filter: brightness(0.5);
+  animation: logoPulse 6s ease-in-out infinite;
 }
 
 .section-content {
