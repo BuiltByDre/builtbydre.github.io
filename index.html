@@ -64,15 +64,44 @@
   margin-bottom: 1.5rem;
 }
 
-    .suite-heading {
+    details.project-group {
+      margin-bottom: 1.5rem;
+      border: 1px solid #21262d;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    details.project-group summary {
       color: #8b949e;
       font-size: 0.8rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      margin: 1.75rem 0 0.75rem;
-      border-bottom: 1px solid #21262d;
-      padding-bottom: 0.4rem;
+      padding: 0.75rem 1rem;
+      background-color: rgba(22, 27, 34, 0.6);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      user-select: none;
+    }
+
+    details.project-group summary::-webkit-details-marker { display: none; }
+
+    details.project-group summary::before {
+      content: '▶';
+      font-size: 0.65rem;
+      transition: transform 0.2s;
+      color: #58a6ff;
+    }
+
+    details.project-group[open] summary::before {
+      transform: rotate(90deg);
+    }
+
+    details.project-group .group-content {
+      padding: 1rem 1rem 0.25rem;
     }
 
 
@@ -129,12 +158,12 @@
 
   <div class="section-content">
     <h1>Andre | DreCloud</h1>
-    <p>I am a relentless learner and solution-oriented technologist with a strong customer service mindset. Through self-study and determination, I've earned multiple IT certifications and built a foundation in hardware, support, and cloud systems. I aim to transition into a cloud or DevOps-focused role and am actively pursuing certifications like Terraform Associate and Azure AZ-104.</p>
+    <p>I am a relentless learner and solution-oriented technologist with a strong customer service mindset. Through self-study and determination, I've earned multiple IT certifications and built a foundation in hardware, support, and cloud systems. I aim to transition into a cloud or DevOps-focused role and am actively pursuing certifications like Azure AZ-104.</p>
 
     <h2>About Me</h2>
     <p>I began my IT journey by earning foundational certifications (CompTIA ITF+, A+, ITIL v3), which laid the groundwork for my transition from hands-on hardware support into helpdesk and analyst roles. As I gained experience, I became a subject matter expert and moved into a systems administration role, where I’ve continued to expand my knowledge and responsibilities. I’m passionate about cloud technologies and hold certifications across AWS, Azure, and GCP. Outside of tech, I enjoy cooking and experimenting with new recipes, and I find balance by spending quality time with my dog, cat, and my daughter — my greatest inspiration.</p>
 
-    <p>Currently studying: Terraform Associate and Azure AZ-104</p>
+    <p>Currently studying: Azure AZ-104</p>
 
     <a class="button" href="#projects">View Projects</a>
   </div>
@@ -172,55 +201,68 @@
       <div class="cert-card">AWS Cloud Practitioner, AWS Solutions Architect Associate</div>
       <div class="cert-card">Azure Fundamentals (AZ-900)</div>
       <div class="cert-card">Google Associate Cloud Engineer</div>
-      <div class="cert-card">Studying: Terraform Associate, Azure AZ-104</div>
+      <div class="cert-card">HashiCorp Terraform Associate</div>
+      <div class="cert-card">Studying: Azure AZ-104</div>
     </section>
 
     <!-- Projects -->
     <section id="projects">
       <h2>Projects</h2>
 
-      <div class="project-card">
-        <strong>Jobjay – ATS Resume Writing Tool <span style="color: #8b949e; font-weight: normal;">(In Development)</span></strong><br>
-        An AI-powered resume writing tool that crafts ATS-optimized resumes tailored to specific job descriptions, helping job seekers beat applicant tracking systems.
-      </div>
+      <details class="project-group" open>
+        <summary>Inbox Tools</summary>
+        <div class="group-content">
 
-      <p class="suite-heading">Inbox Suite</p>
+          <div class="project-card">
+            <strong><a href="https://atc.inboxstork.com/" target="_blank" rel="noopener noreferrer" style="color: #58a6ff;">InboxStork ATC – Air Traffic Control</a></strong><br>
+            Email deliverability command center. Monitor sending infrastructure, track authentication health, and catch issues before they hit the inbox.
+          </div>
 
-      <div class="project-card">
-        <strong><a href="https://atc.inboxstork.com/" target="_blank" rel="noopener noreferrer" style="color: #58a6ff;">InboxStork ATC – Email Deliverability Platform</a></strong><br>
-        Enterprise-grade email deliverability platform for monitoring, diagnosing, and improving inbox placement. Built with Next.js 15, Supabase, and Claude AI.
-      </div>
+          <div class="project-card">
+            <strong><a href="https://tracerhawk.app/" target="_blank" rel="noopener noreferrer" style="color: #58a6ff;">TracerHawk</a></strong><br>
+            Trace where your email reputation stands across the major providers. Surface blocklists, sender score signals, and delivery patterns at a glance.
+          </div>
 
-      <div class="project-card">
-        <strong><a href="https://tracerhawk.app/" target="_blank" rel="noopener noreferrer" style="color: #58a6ff;">TracerHawk – Email Deliverability Tracker</a></strong><br>
-        Email deliverability tracking and analysis tool — sister app to InboxStork ATC. Diagnoses why emails land in spam and surfaces actionable fixes.
-      </div>
+          <div class="project-card">
+            <strong><a href="https://dmarc-analyzer.vercel.app/reporthawk" target="_blank" rel="noopener noreferrer" style="color: #58a6ff;">ReportHawk</a> <span style="color: #8b949e; font-weight: normal;">(Custom domain coming soon)</span></strong><br>
+            DMARC report analyzer that turns raw XML reports into clear, actionable insights — helping organizations lock down email authentication and stop spoofing.
+          </div>
 
-      <div class="project-card">
-        <strong><a href="https://dmarc-analyzer.vercel.app/reporthawk" target="_blank" rel="noopener noreferrer" style="color: #58a6ff;">ReportHawk – DMARC Report Analyzer</a></strong><br>
-        DMARC report analysis tool with IP lookups, DNS checks, and AI-powered insights to help organizations monitor email authentication and prevent spoofing. Custom domain coming soon.
-      </div>
+        </div>
+      </details>
 
-      <div class="project-card">
-        <strong>Scribbly <span style="color: #8b949e; font-weight: normal;">(In Development)</span></strong><br>
-        A Progressive Web App for children's drawing animations. Features Claude Vision for AI-powered drawing recognition, PixiJS 2.5D animation rendering, and GIF export.
-      </div>
+      <details class="project-group" open>
+        <summary>Hobby &amp; Productivity</summary>
+        <div class="group-content">
 
-      <div class="project-card">
-        <strong><a href="/umami/" target="_blank" rel="noopener noreferrer" style="color: #58a6ff;">ResumeAI – ATS Resume Optimizer &amp; Cover Letter Generator</a></strong><br>
-        A full-stack AI-powered web app that parses uploaded resumes (PDF/DOCX), analyzes them against a job description, and generates an ATS-optimized resume and tailored cover letter using the Anthropic Claude API. Built with Python/Flask and React/TypeScript/Vite.
-      </div>
+          <div class="project-card">
+            <strong><a href="https://jobjay.builtbydre.cloud" target="_blank" rel="noopener noreferrer" style="color: #58a6ff;">Jobjay</a></strong><br>
+            AI-powered resume writing tool that helps job seekers craft tailored, ATS-optimized resumes for any role.
+          </div>
 
-      <div class="project-card">
-        <strong>TinyPoints <span style="color: #8b949e; font-weight: normal;">(In Development)</span></strong><br>
-        A full-stack web application inspired by my daughter. This app will showcase cloud hosting, frontend/backend development, and CI/CD integration.
-      </div>
+          <div class="project-card">
+            <strong><a href="/umami/" target="_blank" rel="noopener noreferrer" style="color: #58a6ff;">ResumeAI</a></strong><br>
+            Upload your resume, paste a job description, and get an ATS-optimized resume and tailored cover letter back in seconds.
+          </div>
+
+          <div class="project-card">
+            <strong>Scribbly <span style="color: #8b949e; font-weight: normal;">(In Development)</span></strong><br>
+            A drawing app for kids that brings their artwork to life with animations. Export as GIF and keep the magic.
+          </div>
+
+          <div class="project-card">
+            <strong>TinyPoints <span style="color: #8b949e; font-weight: normal;">(In Development)</span></strong><br>
+            A reward and milestone tracker built for kids — inspired by my daughter.
+          </div>
+
+        </div>
+      </details>
 
     </section>
 
     <!-- Contact / Footer -->
     <footer>
-      <p>Contact: <a href="mailto:two3technology@gmail.com">two3technology@gmail.com</a></p>
+      <p>Contact: <a href="mailto:andre@builtbydre.cloud">andre@builtbydre.cloud</a></p>
       <!-- <p>GitHub | LinkedIn | Resume (links to be added)</p> -->
       <p>&copy; 2025 BuiltByDre</p>
     </footer>
