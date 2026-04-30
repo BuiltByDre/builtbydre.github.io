@@ -57,12 +57,23 @@
     }
 
     .project-card, .cert-card {
-  background-color: rgba(22, 27, 34, 0.9); /* Dark w/ transparency */
+  background-color: rgba(22, 27, 34, 0.9);
   padding: 1rem;
   border: 1px solid #30363d;
   border-radius: 8px;
   margin-bottom: 1.5rem;
 }
+
+    .suite-heading {
+      color: #8b949e;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin: 1.75rem 0 0.75rem;
+      border-bottom: 1px solid #21262d;
+      padding-bottom: 0.4rem;
+    }
 
 
     footer {
@@ -167,14 +178,44 @@
     <!-- Projects -->
     <section id="projects">
       <h2>Projects</h2>
+
       <div class="project-card">
-        <strong>TinyPoints (In Development)</strong><br>
-        A full-stack web application inspired by my daughter. This app will showcase cloud hosting, frontend/backend development, and CI/CD integration.
+        <strong>Jobjay – ATS Resume Writing Tool <span style="color: #8b949e; font-weight: normal;">(In Development)</span></strong><br>
+        An AI-powered resume writing tool that crafts ATS-optimized resumes tailored to specific job descriptions, helping job seekers beat applicant tracking systems.
       </div>
+
+      <p class="suite-heading">Inbox Suite</p>
+
+      <div class="project-card">
+        <strong><a href="https://atc.inboxstork.com/" target="_blank" rel="noopener noreferrer" style="color: #58a6ff;">InboxStork ATC – Email Deliverability Platform</a></strong><br>
+        Enterprise-grade email deliverability platform for monitoring, diagnosing, and improving inbox placement. Built with Next.js 15, Supabase, and Claude AI.
+      </div>
+
+      <div class="project-card">
+        <strong><a href="https://tracerhawk.app/" target="_blank" rel="noopener noreferrer" style="color: #58a6ff;">TracerHawk – Email Deliverability Tracker</a></strong><br>
+        Email deliverability tracking and analysis tool — sister app to InboxStork ATC. Diagnoses why emails land in spam and surfaces actionable fixes.
+      </div>
+
+      <div class="project-card">
+        <strong><a href="https://dmarc-analyzer.vercel.app/reporthawk" target="_blank" rel="noopener noreferrer" style="color: #58a6ff;">ReportHawk – DMARC Report Analyzer</a></strong><br>
+        DMARC report analysis tool with IP lookups, DNS checks, and AI-powered insights to help organizations monitor email authentication and prevent spoofing. Custom domain coming soon.
+      </div>
+
+      <div class="project-card">
+        <strong>Scribbly <span style="color: #8b949e; font-weight: normal;">(In Development)</span></strong><br>
+        A Progressive Web App for children's drawing animations. Features Claude Vision for AI-powered drawing recognition, PixiJS 2.5D animation rendering, and GIF export.
+      </div>
+
       <div class="project-card">
         <strong><a href="/umami/" target="_blank" rel="noopener noreferrer" style="color: #58a6ff;">ResumeAI – ATS Resume Optimizer &amp; Cover Letter Generator</a></strong><br>
         A full-stack AI-powered web app that parses uploaded resumes (PDF/DOCX), analyzes them against a job description, and generates an ATS-optimized resume and tailored cover letter using the Anthropic Claude API. Built with Python/Flask and React/TypeScript/Vite.
       </div>
+
+      <div class="project-card">
+        <strong>TinyPoints <span style="color: #8b949e; font-weight: normal;">(In Development)</span></strong><br>
+        A full-stack web application inspired by my daughter. This app will showcase cloud hosting, frontend/backend development, and CI/CD integration.
+      </div>
+
     </section>
 
     <!-- Contact / Footer -->
